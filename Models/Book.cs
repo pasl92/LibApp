@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -8,7 +9,8 @@ namespace LibApp.Models
 {
     public class Book
     {
-        public int Id { get; set; }
+		[DatabaseGenerated(DatabaseGeneratedOption.None)]
+		public int Id { get; set; }
 		[Required(ErrorMessage = "Please enter name")]
 		[StringLength(255)]
 		public string Name { get; set; }
