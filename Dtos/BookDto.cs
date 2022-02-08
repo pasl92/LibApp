@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
+using LibApp.Models;
 
 namespace LibApp.Dtos
 {
@@ -14,5 +15,8 @@ namespace LibApp.Dtos
         [Required]
         [StringLength(255)]
         public string Name { get; set; }
+
+        public byte GenreId { get; set; }
+        public GenreTypeDto Genre { get; set; }
     }
 }

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using LibApp.Interfaces;
 using LibApp.Repositories;
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.AspNetCore.Authorization;
 
 namespace LibApp.Controllers.Api
 {
