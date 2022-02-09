@@ -10,6 +10,7 @@ using Microsoft.Extensions.Hosting;
 using System;
 using LibApp.Interfaces;
 using LibApp.Repositories;
+using System.Threading.Tasks;
 
 namespace LibApp
 {
@@ -32,7 +33,7 @@ namespace LibApp
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddScoped<IBookRepository, BookRepository>();
             services.AddControllersWithViews();
@@ -67,6 +68,8 @@ namespace LibApp
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
+            
         }
+        
     }
 }
