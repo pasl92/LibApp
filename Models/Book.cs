@@ -9,7 +9,7 @@ namespace LibApp.Models
 {
     public class Book
     {
-		[DatabaseGenerated(DatabaseGeneratedOption.None)]
+		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		public int Id { get; set; }
 		[Required(ErrorMessage = "Please enter name")]
 		[StringLength(255)]
