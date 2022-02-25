@@ -23,12 +23,9 @@ namespace LibApp.Controllers
             _bookRepository = bookRepository;
         }
 
-        public IActionResult Index()
+        public ViewResult Index()
         {
-            var books = _bookRepository.GetBooks()
-                .ToList();
-
-            return View(books);
+            return View();
         }
 
         public IActionResult Details(int id)
